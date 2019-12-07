@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": 123456789,
+    "database": "cloudinary",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "postgres",
+    "logging": false
   },
   "test": {
     "username": "root",
