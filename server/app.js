@@ -10,7 +10,7 @@ const app = express();
 app.set('views',path.join(__dirname,'views'));
 app.engine('.hbs',exphbs({
   defaultLayout:'main',
-  layoutsDir: path.join(app.get('views'),'layaouts'),
+  layoutsDir: path.join(app.get('views'),'layouts'),
   partialsDir:path.join(app.get('views'),'partials'),
   extname:'hbs'
 }))
@@ -24,7 +24,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 
-app.use(multer().single('image'))
 
 const storage=multer.diskStorage({
   destination:path.join(__dirname,'public/uploads'),
