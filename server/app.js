@@ -4,6 +4,9 @@ const multer=require('multer')
 const path=require('path')
 const exphbs=require('express-handlebars')
 const app = express();
+const fs=require('fs-extra')
+
+
 
 
 //Settings
