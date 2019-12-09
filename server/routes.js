@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cloudinary=require('cloudinary')
 const model=require('./models');
+const  fs=require('fs-extra')
 
 cloudinary.config({
     cloud_name:'dtk23qqtz',
@@ -18,11 +19,15 @@ router.get('/images/add',(req,res)=>{
 })
 
 router.post('/images/add',(req,res)=>{
+    //console.log('epale')
+
+
+    
     const {title,description}=req.body
+   // console.log(req.file.path)
     cloudinary.v2.uploader.upload(req.file.path)
     .then(function(result){
-        
-        model.Photo.create({
+        model.photo.create({
             title: title,
             description: description,
             imageUrl: result.url,
